@@ -1,3 +1,10 @@
+/* здравствуйте! перед отправкой скачала 
+макет заново и настроила (насколько возможно под pixel perfect), не понимаю в чем проблема, 
+но макеты скаченные из фигмы 14.01.26 и 17.01.26 разнятся, 
+и каждый раз подбивать под новые значения уже превращается в работу ради работы, 
+если на этот раз опять с макетом не сойдется, 
+оставьте пожалуйста ссылку на макет по которому проверяете, спасибо.*/
+
 .header {
   display: grid;
   grid-template-columns: 1fr 148px 1fr;
@@ -6,7 +13,6 @@
   width: 1100px;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
-  margin-bottom: 69px;
 }
 
 .header__links-list-item {
@@ -19,7 +25,7 @@
 
 .header__links-list {
   display: flex;
-  gap: 32px;
+  gap: 33px;
   flex-direction: row;
   padding-inline-start: 0;
   justify-self: start;
@@ -35,14 +41,13 @@
   grid-column: 2/3;
   height: 105px;
   width: 148px;
-  margin-left: 10px;
 }
 
 .address {
   gap: 0;
   font-size: 18px;
-  height: 98px;
   font-style: normal;
+  line-height: 24px;
 }
 
 .header__address {
@@ -50,36 +55,39 @@
   justify-content: space-evenly;
   flex-direction: column;
   justify-self: end;
-  padding-right: 35px;
+  padding-right: 37px;
+  padding-bottom: 2x;
   grid-column: 3/4;
 }
 
 .picture__and__text {
+  position: relative;
   background-image: url(../images/lotus-flower.svg);
   background-repeat: no-repeat;
-  height: auto;
-  width: 1100px;
-  color: rgb(255, 255, 255);
-  margin-bottom: 111px;
-}
-
-.overlay__picture__and__text {
-  height: 757px;
+  height: 100%;
   min-width: 1100px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 197px;
 }
 
 .overlay {
-  content: "";
   position: absolute;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 286px 339px 398px;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(3, 115px) auto;
-  min-width: 1100px;
+  height: auto;
+  width: 100%;
   padding: 50px;
   gap: 20px 0;
 }
@@ -91,8 +99,8 @@
   grid-row: 1 / -1;
   align-items: center;
   text-transform: uppercase;
-  z-index: 1;
   font-size: 100px;
+  z-index: 1;
   letter-spacing: 30px;
 }
 
@@ -105,32 +113,32 @@
 .aligned-text_center {
   justify-self: center;
   align-self: center;
-  padding-left: 15px;
+  padding-left: 30px;
   padding-top: 115px;
 }
 
 .aligned-text_right {
-  justify-self: end;
   align-self: end;
-  padding-top: 115px;
-  letter-spacing: 27px;
+  text-align: right;
+  padding-top: 112px;
+  padding-left: 613px;
+  width: 100%;
 }
 
 .cover__description-text {
   grid-column: 1/3;
   grid-row: 4/5;
-  justify-self: start;
-  align-self: end;
   width: 100%;
+  justify-self: end;
+  align-self: end;
   text-align: justify;
-  text-align-last: justify;
-  padding-left: 4px;
+  padding-left: 3px;
   padding-bottom: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   font-size: 22px;
   text-transform: uppercase;
   font-weight: normal;
-  white-space: nowrap;
+  word-spacing: 18px;
   z-index: 1;
 }
 
@@ -142,12 +150,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 200px 20px 0 0;
-  width: 256px;
+  margin-top: 200px;
+  min-width: 256px;
   min-height: 51px;
   border: 1px solid rgb(255, 255, 255);
   font-size: 20px;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 1px;
   font-weight: normal;
   z-index: 1;
@@ -156,9 +165,8 @@
 .lots__title {
   font-size: 40px;
   text-transform: uppercase;
-  margin-bottom: 37px;
-  padding-top: 13px;
   padding-left: 63px;
+  margin-bottom: 35px;
 }
 
 .lots {
@@ -171,9 +179,9 @@
 }
 
 .lot__card {
-  height: 596px;
+  min-height: 596px;
   width: 334px;
-  padding-top: 50px;
+  padding-top: 49px;
   padding-left: 40px;
   padding-right: 40px;
   position: relative;
@@ -182,17 +190,10 @@
   background-repeat: no-repeat;
 }
 
-.overlay__lot__card {
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-}
-
-h2 {
+.card__title {
   line-height: 26px;
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 22px;
+  letter-spacing: 0px;
   text-transform: uppercase;
   text-decoration: underline;
   font-weight: bold;
@@ -250,18 +251,20 @@ article {
   display: block;
   text-decoration: underline;
   color: #000000;
-  padding-top: 35px;
+  padding-top: 33px;
   padding-left: 65px;
 }
 
 .about__auction {
   display: grid;
-  grid-template-columns: auto 820px;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 2;
   justify-content: space-between;
+  padding-right: 28px;
   height: auto;
-  width: 1052px;
+  width: 100%;
   margin-top: 150px;
+  margin-bottom: 181px;
 }
 
 .title__about__auction {
@@ -282,33 +285,26 @@ article {
 }
 
 .about__text {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  gap: 26px;
+  width: 100%;
+  padding: 10px 0 0 72px;
   font-size: 20px;
-  padding-left: 70px;
-}
-
-.upper__block {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  align-items: start;
-  padding-top: 10px;
-  padding-right: 80px;
-}
-
-.lower__block {
-  grid-column: 2/3;
-  grid-row: 4/4;
-  align-items: center;
-  padding-right: 55px;
-  padding-top: 30px;
+  line-height: 24px;
 }
 
 footer {
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  margin-top: 100px;
-  padding: 90px 30px 52px 50px;
-  width: 1100px;
+  padding: 0 30px 40px 50px;
+  height: auto;
+  min-width: 1100px;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   font-size: 18px;
@@ -319,10 +315,11 @@ footer {
   flex-direction: column;
   grid-column: 1;
   grid-row: 1;
-  align-self: end;
-  justify-self: start;
+  justify-self: space-between;
   font-style: normal;
-  padding-bottom: 48px;
+  line-height: 24px;
+  min-width: 0;
+  padding-bottom: 13px;
 }
 
 .footer__menu {
@@ -330,10 +327,9 @@ footer {
   grid-row: 1;
   align-self: center;
   justify-self: center;
-  width: 100%;
-  line-height: 0;
-  padding-bottom: 75px;
-  padding-right: 13px;
+  line-height: 0px;
+  padding-bottom: 69px;
+  padding-right: 17px;
 }
 
 .footer__menu ul {
@@ -346,6 +342,10 @@ footer {
   gap: 22px;
 }
 
+.not__underline {
+  text-decoration: none;
+}
+
 .social__network {
   grid-column: 3;
   grid-row: 1;
@@ -353,12 +353,12 @@ footer {
   justify-self: end;
   display: flex;
   gap: 48px;
-  padding-right: 17px;
-  padding-bottom: 95px;
+  padding-right: 20px;
+  padding-bottom: 78px;
 }
 
 .social__logo {
   display: block;
-  width: 48px;
-  height: 48px;
+  height: auto;
+  width: auto;
 }
